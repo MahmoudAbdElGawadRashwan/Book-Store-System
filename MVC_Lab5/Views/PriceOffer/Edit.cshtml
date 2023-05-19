@@ -1,0 +1,44 @@
+﻿@model MVC_Lab5.Models.PriceOffers
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>PriceOffers</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="PriceOffersId" />
+            <div class="form-group">
+                <label asp-for="NewPrice" class="control-label"></label>
+                <input asp-for="NewPrice" class="form-control" />
+                <span asp-validation-for="NewPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PromotionalText" class="control-label"></label>
+                <input asp-for="PromotionalText" class="form-control" />
+                <span asp-validation-for="PromotionalText" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BookId" class="control-label"></label>
+                <input asp-for="BookId" class="form-control" />
+                <span asp-validation-for="BookId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
